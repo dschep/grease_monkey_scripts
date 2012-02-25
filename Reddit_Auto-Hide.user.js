@@ -7,17 +7,17 @@
 // ==/UserScript==
 
 $(document).ready(function () {
-    $('a.title').mousedown(function (e) {
+    $('.link .title, .link .comments, .link .arrow').mousedown(function (e) {
         if (e.which == 3) return; // ignore right click
 
         var $this = $(this)
         $.post('/api/hide', {
             executed: 'hidden',
-            id: $this.closest('.thing').attr('data-fullname'),
+            id: $this.closest('.link').attr('data-fullname'),
             renderstyle: 'html',
             uh: $('[name=uh]').val()
         }, function () {
-            $this.closest('.entry').find('a:contains(hide)')
+            $this.closest('.link').find('.hide-button a:contains(hide)')
                 .attr('onclick', "change_state(this, 'unhide', hide_thing);")
                 .text('unhide');
         });
