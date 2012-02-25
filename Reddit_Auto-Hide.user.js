@@ -16,6 +16,10 @@ $(document).ready(function () {
             id: $this.closest('.thing').attr('data-fullname'),
             renderstyle: 'html',
             uh: $('[name=uh]').val()
+        }, function () {
+            $this.closest('.entry').find('a:contains(hide)')
+                .attr('onclick', "change_state(this, 'unhide', hide_thing);")
+                .text('unhide');
         });
     });
 });
