@@ -4,6 +4,8 @@
 // @description    Hides posts as you scroll past them.
 // @require        http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js
 // @include        http://www.reddit.com/*
+// @include        https://www.reddit.com/*
+// @include        https://pay.reddit.com/*
 // ==/UserScript==
 
 $(document).ready(function () {
