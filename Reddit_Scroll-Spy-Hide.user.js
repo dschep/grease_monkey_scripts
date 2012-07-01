@@ -11,7 +11,7 @@
 $(document).ready(function () {
     var things = $('.things');
     $(window).scroll(function () {
-        var scrollTop= $(body).scrollTop();
+        var scrollTop= $(document).scrollTop();
         $('.link').not('.hidden').filter(function () {
             return ($(this).offset().top < scrollTop || // off screen
                     // or at bottom of page
